@@ -1,0 +1,611 @@
+@use '../../styles/variables' as vars;
+
+.bannerHeander {
+    width: 100%;
+    height: 754px;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Segoe UI';
+    background-image: url(/public/imgs/banners/vacasBanner.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    font-family: vars.$fontPrimary;
+
+
+    @media (max-width: 1024px) {
+        height: auto;
+        min-height: 600px;
+    }
+
+    @media (max-width: 768px) {
+        min-height: 800px;
+    }
+}
+
+.faixaBanner {
+    position: absolute;
+    top: 641px;
+    left: 6px;
+    width: 100%;
+    max-width: 1917px;
+    height: 113px;
+
+    @media (max-width: 1024px) {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.faixaBannerChild {
+    position: absolute;
+    top: 67px;
+    left: -4px;
+    background: linear-gradient(90deg, rgba(106, 142, 62, 0.64), #7ca845 99.99%);
+    width: 60%;
+    height: 46px;
+
+    @media (max-width: 1024px) {
+        width: 60%;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.faixaBannerChildPai {
+    filter: drop-shadow(-22px 0px 38.5px rgba(0, 0, 0, 0.4));
+
+    .faixaBannerChildBig {
+        background: linear-gradient(93deg, rgba(123, 167, 70, 1) 0%, rgba(0, 77, 97, 1) 100%);
+        clip-path: polygon(70px 0, 100% 0, 100% 100%, 0 100%, 0 113px);
+
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 50%;
+        height: 113px;
+
+
+    }
+}
+
+
+
+.faixaAesIcon {
+    position: absolute;
+    top: 0px;
+    left: 908px;
+    width: 1009px;
+    height: 113px;
+
+    @media (max-width: 1024px) {
+        left: 50%;
+        width: 50%;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+.imagensBanners {
+    position: absolute;
+    top: 23px;
+    left: 1064px;
+    width: 760.2px;
+    height: 593px;
+
+    @media (max-width: 1440px) {
+        left: 60%;
+        width: 600px;
+        height: 480px;
+    }
+
+    @media (max-width: 1024px) {
+        left: 50%;
+        width: 450px;
+        height: 380px;
+        top: 50px;
+    }
+
+    @media (max-width: 768px) {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 100%;
+        height: 300px;
+        margin: 20px auto;
+    }
+
+    .designSemNome61 {
+        position: absolute;
+        top: 107.3px;
+        left: 286.44px;
+        border-radius: 236.9px;
+        width: 473.8px;
+        height: 485.7px;
+        object-fit: cover;
+
+        @media (max-width: 1440px) {
+            width: 380px;
+            height: 390px;
+            top: 85px;
+            left: 230px;
+            border-radius: 190px;
+        }
+
+        @media (max-width: 1024px) {
+            width: 280px;
+            height: 290px;
+            top: 60px;
+            left: 160px;
+            border-radius: 140px;
+        }
+
+        @media (max-width: 768px) {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 100px;
+        }
+    }
+
+    .salameEQueijo {
+        position: absolute;
+        top: 0px;
+        left: 112px;
+        border-radius: 136.17px;
+        width: 277.9px;
+        height: 272.3px;
+        object-fit: cover;
+
+        @media (max-width: 1440px) {
+            width: 220px;
+            height: 215px;
+            left: 90px;
+            border-radius: 110px;
+        }
+
+        @media (max-width: 1024px) {
+            width: 160px;
+            height: 160px;
+            left: 60px;
+            border-radius: 80px;
+        }
+
+        @media (max-width: 768px) {
+            width: 130px;
+            height: 130px;
+            top: 10px;
+            left: 20%;
+            border-radius: 65px;
+        }
+    }
+
+    .vacaCuriosaEEngracadaOlhanIcon {
+        position: absolute;
+        top: 220px;
+        left: 0px;
+        border-radius: 167.16px;
+        width: 334.3px;
+        height: 338.6px;
+        object-fit: cover;
+
+        @media (max-width: 1440px) {
+            width: 270px;
+            height: 275px;
+            top: 180px;
+            border-radius: 135px;
+        }
+
+        @media (max-width: 1024px) {
+            width: 200px;
+            height: 200px;
+            top: 130px;
+            border-radius: 100px;
+        }
+
+        @media (max-width: 768px) {
+            width: 150px;
+            height: 150px;
+            top: 100px;
+            left: 10%;
+            border-radius: 75px;
+        }
+    }
+}
+
+.titDireita {
+    position: absolute;
+    top: 67px;
+    left: 115px;
+    width: 822px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+
+    @media (max-width: 1440px) {
+        width: 650px;
+        left: 80px;
+        gap: 25px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 45%;
+        left: 40px;
+        top: 50px;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        position: relative;
+        width: 90%;
+        left: auto;
+        top: auto;
+        margin: 20px auto;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.tituloBanner {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+    font-size: 36px;
+    font-family: vars.$fontPrimary;
+    font-weight: 700;
+
+    @media (max-width: 1440px) {
+        gap: 30px;
+        font-size: 32px;
+    }
+
+    @media (max-width: 1024px) {
+        gap: 20px;
+        font-size: 26px;
+    }
+
+    @media (max-width: 768px) {
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        font-size: 22px;
+    }
+}
+
+.transformandoDesafioEmOportContainer {
+    width: 842px;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    flex-shrink: 0;
+    filter: drop-shadow(-7px 4px 8.4px rgba(0, 0, 0, 0.25));
+
+    @media (max-width: 1440px) {
+        width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100%;
+        font-size: 24px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+    }
+
+    .oportunidades {
+        font-size: 50px;
+        background: linear-gradient(90deg, #3ecf8b 62.98%, #3f84d9);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media (max-width: 1440px) {
+            font-size: 42px;
+        }
+
+        @media (max-width: 1024px) {
+            font-size: 34px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 28px;
+        }
+    }
+
+    .comConsultoriaEstratgica {
+        font-size: 32px;
+        color: #dbb04e;
+
+        @media (max-width: 1440px) {
+            font-size: 28px;
+        }
+
+        @media (max-width: 1024px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+}
+
+.oferecemosServiosPersonaliz {
+    width: 799px;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    color: rgba(255, 255, 255, 0.73);
+    display: inline-block;
+    flex-shrink: 0;
+
+    @media (max-width: 1440px) {
+        width: 100%;
+        font-size: 22px;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+}
+
+.iconesBanner {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    color: rgba(255, 255, 255, 0.73);
+
+    @media (max-width: 1024px) {
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        gap: 15px;
+        justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.icone1,
+.icone2,
+.icone3 {
+    width: 142px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    gap: 10px;
+
+    @media (max-width: 1024px) {
+        width: 110px;
+    }
+
+    @media (max-width: 768px) {
+        width: 90px;
+    }
+}
+
+.icone1 {
+    justify-content: flex-end;
+}
+
+.icone3 {
+    justify-content: center;
+    gap: 9px;
+}
+
+.icone1Child {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    box-shadow: -6px 6px 16.4px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    background: linear-gradient(105.61deg, #eed273, #cd9632);
+    z-index: 0;
+
+    @media (max-width: 1024px) {
+        width: 60px;
+        height: 60px;
+    }
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.experienciaTcnica {
+    align-self: stretch;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    text-shadow: -1px 3px 2.4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    font-size: 16px;
+
+    @media (max-width: 1024px) {
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.textoDoSeuPargrafo1,
+.textoDoSeuPargrafo11,
+.textoDoSeuPargrafo21,
+.textoDoSeuPargrafo31 {
+    position: absolute;
+    margin: 0 !important;
+    top: 15px;
+    z-index: 2;
+
+    @media (max-width: 1024px) {
+        top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        top: 8px;
+    }
+}
+
+.textoDoSeuPargrafo1 {
+    width: 40px;
+    height: 50px;
+    left: 51px;
+    object-fit: contain;
+
+    @media (max-width: 1024px) {
+        width: 30px;
+        height: 40px;
+        left: 40px;
+    }
+
+    @media (max-width: 768px) {
+        width: 25px;
+        height: 30px;
+        left: 32px;
+    }
+}
+
+.textoDoSeuPargrafo11,
+.textoDoSeuPargrafo21 {
+    width: 40px;
+    height: 50px;
+    left: 51px;
+    object-fit: cover;
+
+    @media (max-width: 1024px) {
+        width: 30px;
+        height: 40px;
+        left: 40px;
+    }
+
+    @media (max-width: 768px) {
+        width: 25px;
+        height: 30px;
+        left: 32px;
+    }
+}
+
+.textoDoSeuPargrafo31 {
+    width: 49px;
+    height: 50px;
+    left: 46px;
+
+    @media (max-width: 1024px) {
+        width: 35px;
+        height: 40px;
+        left: 37px;
+    }
+
+    @media (max-width: 768px) {
+        width: 28px;
+        height: 30px;
+        left: 31px;
+    }
+}
+
+.btnsAo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    color: #41555c;
+
+
+
+    @media (max-width: 1024px) {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+}
+
+.falarComConsultorParent {
+    box-shadow: 8px -4px 15.3px rgba(255, 255, 255, 0.25) inset, -5px 7px 14.2px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    background: linear-gradient(105.61deg, #eed273, #cd9632);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    gap: 10px;
+    white-space: nowrap;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        max-width: 250px;
+        padding: 10px 20px;
+    }
+
+    .falarComConsultor {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::after {
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30.692 18.6608L20.8482 28.5045C20.54 28.8127 20.122 28.9859 19.6861 28.9859C19.2503 28.9859 18.8322 28.8127 18.524 28.5045C18.2158 28.1963 18.0427 27.7783 18.0427 27.3424C18.0427 26.9065 18.2158 26.4885 18.524 26.1803L25.5664 19.1407H5.46875C5.03363 19.1407 4.61633 18.9678 4.30865 18.6601C4.00098 18.3524 3.82812 17.9351 3.82812 17.5C3.82812 17.0649 4.00098 16.6476 4.30865 16.3399C4.61633 16.0323 5.03363 15.8594 5.46875 15.8594H25.5664L18.5268 8.81565C18.2185 8.50744 18.0454 8.08942 18.0454 7.65354C18.0454 7.21767 18.2185 6.79964 18.5268 6.49143C18.835 6.18322 19.253 6.01007 19.6889 6.01007C20.1247 6.01007 20.5428 6.18322 20.851 6.49143L30.6947 16.3352C30.8477 16.4878 30.969 16.6691 31.0517 16.8688C31.1344 17.0684 31.1768 17.2825 31.1766 17.4985C31.1763 17.7146 31.1334 17.9285 31.0502 18.128C30.9671 18.3274 30.8453 18.5085 30.692 18.6608Z' fill='%2341555C'/%3E%3C/svg%3E%0A");
+
+            background-repeat: no-repeat;
+            width: 35px;
+            height: 35px;
+            display: block;
+        }
+
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 15px;
+        }
+    }
+}

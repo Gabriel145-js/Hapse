@@ -1,0 +1,91 @@
+@use '../../styles/variables' as vars;
+
+.containerNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 10px 20px;
+    box-shadow: 0 15px 19.9px 0 rgba(0, 0, 0, 0.44);
+
+    .logoNavbar {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: row;
+
+        .logo {
+            width: 78px;
+            height: 63px;
+
+        }
+
+        .logoText {
+            font-family: vars.$fontPrimary;
+
+            h1 {
+                font-size: 23px;
+                font-weight: vars.$weightBold;
+                color: vars.$colorGrafite;
+                margin: 0;
+            }
+
+            p {
+                color: vars.$colorGrafite;
+                font-weight: vars.$weightRegular;
+                font-size: 18px;
+                margin: 0;
+            }
+
+        }
+    }
+
+    .menuNavbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 46px;
+
+        a {
+            text-decoration: none;
+            color: vars.$colorGrafite;
+            font-size: 20px;
+            font-weight: vars.$weightSemiBold;
+            font-family: vars.$fontPrimary;
+            transition: transform 0.3s ease-in-out;
+            
+            &:hover{
+                text-decoration: underline;
+                transform: scale(1.05);
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .buttonCtt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a{
+            padding: 10px 20px;
+            background-color: #5C7424;
+            font-size: 18px;
+            font-family: vars.$fontPrimary;
+            font-weight: vars.$weightBold;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            border-radius: 100px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 2px 12px 21.4px 0 rgba(0, 0, 0, 0.44);
+            transition: transform 0.3s ease-in-out;
+
+            &:hover{
+                transform: scale(1.1);
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
+}
