@@ -3,6 +3,7 @@ import styles from './styles.module.scss'
 import missaoIcon from '../../assets/svgs/icons/missaoIcon.svg'
 import visaoIcon from '../../assets/svgs/icons/valoresIcon.svg'
 import valoresIcon from '../../assets/svgs/icons/visaoIcon.svg'
+import { Element } from 'react-scroll';
 
 const fotoFer = "/imgs/fotoFer.png"
 const fotoMay = "/imgs/fotoMay.png"
@@ -22,7 +23,10 @@ const QuemSomos = () => {
         { iconePessoa: fotoRafa, nomePessoa: 'Rafael Sachet', primeiroNome: 'Rafael', descricaoPessoa: 'Zootecnista e Mestre em Produção Animal, com foco em bovinocultura de corte e ampla experiência acadêmica e prática no agro. Sócio-fundador da HAPSE, atua com ênfase em produção, manejo e gestão...' }
     ]
     return (
-        <section className={styles.containerMainQuemSomos}>
+        <Element name='quem-somos'>
+
+     
+        <section id='quem-somos' className={styles.containerMainQuemSomos}>
             <h1>Quem somos</h1>
 
             <div className={styles.containerCards}>
@@ -73,6 +77,7 @@ const QuemSomos = () => {
                 </div>
             </div>
         </section>
+           </Element>
     )
 }
 
