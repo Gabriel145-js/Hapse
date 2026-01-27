@@ -6,6 +6,9 @@ const fotoMay = "/imgs/fotoMay.png"
 const fotoRafa = "/imgs/fotoRafa.png"
 const TimeDescricao = () => {
 
+  const whatsappNumber = "5554996797398";
+  const whatsappMessage = "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+
 
   const cardTime = [
     {
@@ -37,12 +40,12 @@ const TimeDescricao = () => {
           <div className={styles.cardMember} key={index}>
             {member.linkLattes && (
               <a
-                href={member.linkLattes}
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkLattes}
               >
-            
+
               </a>
             )}
             <div className={styles.imageContainer}>
@@ -53,7 +56,7 @@ const TimeDescricao = () => {
 
             <p className={styles.descricao}>{member.descricao}</p>
 
-            
+
 
             <a className={styles.btnCta} href="">Conversar com {member.nome}</a>
           </div>

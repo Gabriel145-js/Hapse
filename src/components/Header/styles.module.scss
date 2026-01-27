@@ -588,6 +588,9 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        text-decoration: none;
+        color: #41555C !important;
+        font-weight: bold;
 
         &::after {
             content: '';

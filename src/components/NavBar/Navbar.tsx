@@ -14,7 +14,9 @@ const Navbar = () => {
   return (
     <div className={style.containerNavbar}>
       <div className={style.logoNavbar}>
-        <img className={style.logo} src={logoMini} alt="Hapse Consultoria" />
+        <a href="/" className={style.logoLink}>
+          <img className={style.logo} src={logoMini} alt="Hapse Consultoria" />
+        </a>
         <div className={style.logoText}>
           <h1>HapseConsultoria</h1>
           <p>AgroAlimentar</p>
