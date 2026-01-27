@@ -5,6 +5,11 @@ import styles from "./styles.module.scss";
 const sebraeFlag = "/imgs/sebraeFlag.png";
 
 const NossosServicos = () => {
+  const whatsappNumber = "5554996797398"; 
+  const whatsappMessage ="Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+
+
+
   return (
     <Element name="nossos-servicos">
       <section id="nossos-servicos" className={styles.containerMainServicos}>
@@ -26,7 +31,7 @@ const NossosServicos = () => {
               <li>Gestão do negócio e propriedades rurais.</li>
             </ul>
 
-            <a href="">Falar com consultor</a>
+            <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" rel="noopener noreferrer">Falar com consultor</a>
           </div>
 
           <div className={styles.cardParceiros}>

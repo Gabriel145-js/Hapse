@@ -6,6 +6,10 @@ import iconeRocket from "../../assets/svgs/icons/rocket-bold.svg";
 import styles from "./styles.module.scss";
 
 const SolucoesPersona = () => {
+  const whatsappNumber = "5554996797398"; 
+  const whatsappMessage ="Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+
+
   return (
     <Element name="solucoes">
       <section id="solucoes" className={styles.containerMainSolucoes}>
@@ -16,10 +20,10 @@ const SolucoesPersona = () => {
             <h4>Proposta personalizada</h4>
             <p>
               Cada propriedade é única, cada desafio é específico. Por
-              isso, criamos soluções exclusivas que se adaptam perfeitamente ao
+              isso, criamos soluções exclusivas que se adaptam perfeitamente ao
               seu negócio e seus objetivos.
             </p>
-            <a href="">Solicitar consulta agora</a>
+            <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" rel="noopener noreferrer">Solicitar consulta agora</a>
           </div>
 
           <div className={styles.cardLeft}>

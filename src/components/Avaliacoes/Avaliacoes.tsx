@@ -14,6 +14,10 @@ const Avaliacoes = () => {
         { icone: userAvaliacao, nome: "Lucas Mendes", empresa: "Mendes Agro", stars: 4.5, descricao: "Consultoria séria e comprometida com resultados. O plano estratégico foi fundamental." },
     ]
 
+
+    const whatsappNumber = "5554996797398"; 
+  const whatsappMessage ="Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+
    
     const avaliacoesInfinitas = [...avaliacoesOriginal, ...avaliacoesOriginal, ...avaliacoesOriginal]
 
@@ -81,7 +85,7 @@ const Avaliacoes = () => {
                     >
                         <h5>{item.pergunta}</h5>
                         <p>{item.resposta}</p>
-                        <a className={styles.ctaCardPerguntas} href="">Fale com um consultor</a>
+                        <a className={styles.ctaCardPerguntas} href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" rel="noopener noreferrer">Fale com um consultor</a>
                     </div>
                 ))}
             </section>
