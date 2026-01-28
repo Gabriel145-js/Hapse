@@ -11,10 +11,20 @@
         padding: 50px 128px 0 128px;
     }
 
+    @media(max-width: 1024px) {
+        padding: 50px 50px 0 50px;
+    }
+
     .containerContentFooter {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
+
+        @media(max-width: 1024px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
 
 
         .containerLogoFooter {

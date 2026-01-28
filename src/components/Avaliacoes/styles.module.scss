@@ -1,4 +1,4 @@
-@use '../../styles/variables' as vars;
+@use "../../styles/variables" as vars;
 
 .containerMainAvaliacoes {
     padding: 50px 0;
@@ -8,28 +8,42 @@
     gap: 70px;
     flex-direction: column;
     font-family: vars.$fontPrimary;
-    
-
 
     h1 {
         padding: 0 108px;
-        color: #FFFFFF;
+        color: #ffffff;
         font-size: 50px;
         font-weight: vars.$weightBold;
-        text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+        text-shadow:
+            1px 0 0 #000,
+            0 1px 0 #000,
+            -1px 0 0 #000,
+            0 -1px 0 #000;
         margin: 0;
 
-        
+        @media (max-width: 1024px) {
+            font-size: 30px;
+            text-align: center;
+        }
 
         &::after {
-            content: '';
+            content: "";
             width: 180px;
             display: flex;
             height: 8px;
             position: relative;
             box-shadow: -4px 8px 14.5px rgba(0, 0, 0, 0.5);
             border-radius: 50px;
-            background-color: #FFFFFF;
+            background-color: #ffffff;
+
+            @media (max-width: 1024px) {
+                width: 100%;
+
+            }
+        }
+
+        @media (max-width: 1024px) {
+            padding: 0 30px;
         }
     }
 
@@ -42,32 +56,30 @@
 
     .marqueeTrack {
         display: flex;
-        gap: 40px; 
-        width: max-content; 
+        gap: 40px;
+        width: max-content;
         padding-bottom: 16px;
 
-        animation: scroll 60s linear infinite; 
-        
-    
+        animation: scroll 60s linear infinite;
+
         will-change: transform;
         transform: translate3d(0, 0, 0);
-
     }
 
     @keyframes scroll {
         0% {
             transform: translateX(0);
         }
+
         100% {
-            
-            transform: translateX(calc(-100% / 3)); 
+            transform: translateX(calc(-100% / 3));
         }
     }
 
     .card {
-        min-width: 439px; 
+        min-width: 439px;
         width: 439px;
-        height: 200px; 
+        height: 200px;
         position: relative;
         box-shadow: -8px 10px 11.6px rgba(0, 0, 0, 0.4);
         border-radius: 25px;
@@ -75,7 +87,10 @@
         border: 3px solid #027b8f;
         box-sizing: border-box;
         padding: 16px;
-        
+
+        @media (max-width: 1024px) {
+            height: 175px;
+        }
 
         .perfil {
             display: flex;
@@ -105,7 +120,7 @@
             }
         }
 
-        > p {
+        >p {
             position: relative;
             font-size: 15px;
             font-family: vars.$fontPrimary;
@@ -115,13 +130,12 @@
             margin: 0;
             margin-top: 10px;
 
-            
             display: -webkit-box;
             -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            -webkit-text-stroke: 0; 
+            -webkit-text-stroke: 0;
         }
 
         .starsAvaliaco {
@@ -133,24 +147,37 @@
         }
     }
 
-
     .subtitleAvaliacoes {
         padding: 0 108px;
-        color: #FFFFFF;
+        color: #ffffff;
         font-size: 45px;
         font-weight: vars.$weightBold;
-        text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+        text-shadow:
+            1px 0 0 #000,
+            0 1px 0 #000,
+            -1px 0 0 #000,
+            0 -1px 0 #000;
         margin: 0;
-        
+
+        @media (max-width: 1024px) {
+            padding: 0 30px;
+            font-size: 30px;
+            text-align: center;
+        }
+
         &::after {
-            content: '';
+            content: "";
             width: 190px;
             display: flex;
             height: 6px;
             position: relative;
             box-shadow: -4px 8px 14.5px rgba(0, 0, 0, 0.5);
             border-radius: 50px;
-            background-color: #FFFFFF;
+            background-color: #ffffff;
+
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
         }
     }
 
@@ -159,6 +186,10 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @media (max-width: 1024px) {
+            padding: 0 30px;
+        }
 
         .cardPergunta {
             width: 60%;
@@ -179,6 +210,13 @@
             transition: height 0.3s ease-in-out;
             cursor: pointer;
 
+            @media (max-width: 1024px) {
+                width: 100%;
+                padding: 16px 20px;
+                padding-top: 10px !important;
+
+            }
+
             h5 {
                 margin: 0;
                 font-size: 22px;
@@ -192,8 +230,12 @@
                 align-items: center;
                 width: 100%;
 
+                @media (max-width: 1024px) {
+                    font-size: 16px;
+                }
+
                 &::after {
-                    content: '';
+                    content: "";
                     display: block;
                     background-repeat: no-repeat;
                     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 3.125C16.6624 3.125 13.3998 4.1147 10.6248 5.96895C7.84968 7.8232 5.68677 10.4587 4.40954 13.5422C3.13231 16.6257 2.79813 20.0187 3.44926 23.2921C4.10038 26.5656 5.70757 29.5724 8.06758 31.9324C10.4276 34.2924 13.4344 35.8996 16.7079 36.5508C19.9813 37.2019 23.3743 36.8677 26.4578 35.5905C29.5413 34.3132 32.1768 32.1503 34.0311 29.3752C35.8853 26.6002 36.875 23.3376 36.875 20C36.87 15.526 35.0906 11.2367 31.927 8.07305C28.7634 4.90945 24.474 3.12996 20 3.125ZM20 33.125C17.4041 33.125 14.8665 32.3552 12.7081 30.913C10.5498 29.4708 8.86749 27.421 7.87409 25.0227C6.88069 22.6244 6.62077 19.9854 7.1272 17.4394C7.63363 14.8934 8.88367 12.5548 10.7192 10.7192C12.5548 8.88366 14.8934 7.63362 17.4394 7.12719C19.9854 6.62076 22.6244 6.88068 25.0227 7.87408C27.421 8.86748 29.4709 10.5497 30.913 12.7081C32.3552 14.8665 33.125 17.4041 33.125 20C33.1213 23.4798 31.7373 26.8161 29.2767 29.2767C26.8161 31.7373 23.4798 33.1213 20 33.125ZM27.5766 16.1734C27.7514 16.3476 27.8901 16.5546 27.9847 16.7825C28.0793 17.0104 28.128 17.2548 28.128 17.5016C28.128 17.7483 28.0793 17.9927 27.9847 18.2206C27.8901 18.4485 27.7514 18.6555 27.5766 18.8297L21.3266 25.0797C21.1524 25.2545 20.9454 25.3932 20.7175 25.4878C20.4896 25.5825 20.2452 25.6312 19.9984 25.6312C19.7517 25.6312 19.5073 25.5825 19.2794 25.4878C19.0515 25.3932 18.8445 25.2545 18.6703 25.0797L12.4203 18.8297C12.0681 18.4774 11.8702 17.9997 11.8702 17.5016C11.8702 17.0034 12.0681 16.5257 12.4203 16.1734C12.7726 15.8212 13.2503 15.6233 13.7484 15.6233C14.2466 15.6233 14.7243 15.8212 15.0766 16.1734L20 21.0938L24.9234 16.1688C25.0979 15.9947 25.3049 15.8568 25.5327 15.7628C25.7605 15.6689 26.0046 15.6207 26.251 15.6212C26.4974 15.6216 26.7413 15.6706 26.9687 15.7654C27.1962 15.8601 27.4027 15.9988 27.5766 16.1734Z' fill='white'/%3E%3C/svg%3E%0A");
@@ -227,7 +269,7 @@
                 padding: 2px 20px;
                 gap: 10px;
                 text-align: left;
-                color: #FFFFFF;
+                color: #ffffff;
                 font-family: vars.$fontPrimary;
                 font-weight: vars.$weightBold;
                 font-size: 18px;
@@ -235,13 +277,13 @@
                 margin-bottom: 6px;
                 transition: transform 0.3s ease-in-out;
 
-                &:hover{
+                &:hover {
                     transform: scale(1.05);
                     transition: transform 0.3s ease-in-out;
                 }
 
                 &::after {
-                    content: '';
+                    content: "";
                     display: block;
                     background-repeat: no-repeat;
                     width: 25px;
@@ -254,6 +296,10 @@
         .aberto {
             height: 240px;
             transition: height 0.3s ease-in-out;
+
+            @media(max-width: 1024px) {
+                height: 390px;
+            }
 
             h5::after {
                 transform: rotate(180deg);

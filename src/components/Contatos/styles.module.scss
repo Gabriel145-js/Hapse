@@ -10,6 +10,10 @@
     padding: 50px 128px;
   }
 
+  @media (max-width: 1400px) {
+    padding: 30px 20px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -22,7 +26,7 @@
     z-index: 0;
   }
 
-  > * {
+  >* {
     position: relative;
     z-index: 1;
   }
@@ -36,6 +40,12 @@
     margin: 0;
     margin-bottom: 70px;
 
+    @media(max-width: 1024px) {
+      font-size: 30px;
+      text-align: center;
+      text-shadow: none;
+    }
+
     &::after {
       content: "";
       width: 280px;
@@ -45,6 +55,11 @@
       box-shadow: -4px 8px 14.5px rgba(0, 0, 0, 0.5);
       border-radius: 50px;
       background-color: #ffffff;
+
+      @media(max-width: 1024px) {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 
@@ -53,6 +68,11 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 50px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 70px;
+    }
 
     .formContatos {
       width: 50%;
@@ -69,7 +89,12 @@
       border-radius: 25px;
       align-items: center;
 
-      > *:not(.form_header) {
+      @media (max-width: 1024px) {
+        width: auto;
+        padding-bottom: 20px;
+      }
+
+      >*:not(.form_header) {
         align-self: center;
       }
 
@@ -87,6 +112,10 @@
           font-weight: vars.$weightBold;
           font-family: vars.$fontPrimary;
           margin: 0;
+
+          @media (max-width: 1024px) {
+            font-size: 25px;
+          }
         }
 
         p {
@@ -96,6 +125,11 @@
           font-family: vars.$fontPrimary;
           margin: 0;
           letter-spacing: 1px;
+
+          @media (max-width: 1024px) {
+            font-size: 16px;
+          }
+
         }
       }
 
@@ -112,6 +146,10 @@
           font-family: vars.$fontPrimary;
           margin: 0;
           letter-spacing: 2px;
+
+          @media (max-width: 1024px) {
+            font-size: 16px;
+          }
         }
 
         input {
@@ -129,6 +167,10 @@
           border: none;
           min-height: 150px;
           max-width: 96%;
+
+          @media (max-width: 1024px) {
+            min-height: 70px;
+          }
         }
       }
 
@@ -139,8 +181,16 @@
         gap: 20px;
         width: 100%;
 
+        @media (max-width: 1024px) {
+          flex-direction: column;
+        }
+
         .form_group {
           width: 50%;
+
+          @media (max-width: 1024px) {
+            width: 100%;
+          }
         }
       }
 
@@ -149,11 +199,9 @@
         position: relative;
         box-shadow: 2px 9px 6.9px rgba(0, 0, 0, 0.25);
         border-radius: 25px;
-        background: linear-gradient(
-          254.15deg,
-          rgba(232, 156, 60, 0.79),
-          rgba(0, 77, 97, 0.79)
-        );
+        background: linear-gradient(254.15deg,
+            rgba(232, 156, 60, 0.79),
+            rgba(0, 77, 97, 0.79));
         display: flex;
         align-items: end;
         justify-content: center;
@@ -170,6 +218,11 @@
         letter-spacing: 2px;
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
+
+        @media(max-width: 1024px) {
+          font-size: 16px;
+          width: 100%;
+        }
 
         &:hover {
           transform: scale(1.05);
@@ -192,6 +245,10 @@
       flex-direction: column;
       gap: 24px;
       width: 50%;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
 
       .logoCardDiferenciais {
         position: absolute;
@@ -223,6 +280,10 @@
             font-weight: vars.$weightBold;
             text-align: left;
             margin: 0;
+
+            @media (max-width: 1024px) {
+              font-size: 25px;
+            }
           }
 
           p {
@@ -233,6 +294,10 @@
             text-align: left;
             font-weight: vars.$weightBold;
             margin: 0;
+
+            @media (max-width: 1024px) {
+              font-size: 16px;
+            }
           }
         }
 
@@ -255,6 +320,10 @@
             align-items: center;
             gap: 10px;
 
+            @media (max-width: 1024px) {
+              font-size: 16px;
+            }
+
             a {
               position: relative;
               font-size: 20px;
@@ -264,6 +333,10 @@
               text-align: left;
               text-decoration: none;
               font-weight: vars.$weightBold;
+
+              @media (max-width: 1024px) {
+                font-size: 16px;
+              }
             }
           }
 
@@ -307,21 +380,23 @@
         overflow: hidden;
         z-index: -1;
 
-        .bgOverlay {
-          position: absolute; 
-          top: 0;
-          left: 0; 
-          width: 100%;
-          height: 100%;
-          background-blend-mode: multiply; 
-          background-size: cover;
-          background-image: url(/public/imgs/fundoRede.svg);
-          opacity: 0.15; 
-          z-index: -2; 
-          pointer-events: none; 
+        @media (max-width: 1024px) {
+          padding: 16px 35px;
         }
 
-        
+        .bgOverlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-blend-mode: multiply;
+          background-size: cover;
+          background-image: url(/public/imgs/fundoRede.svg);
+          opacity: 0.15;
+          z-index: -2;
+          pointer-events: none;
+        }
 
         &::before {
           content: "";
@@ -345,6 +420,7 @@
           background-position: bottom left;
           background-repeat: no-repeat;
           background-image: url("data:image/svg+xml,%3Csvg width='202' height='148' viewBox='0 0 202 148' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_251_416)'%3E%3Cmask id='mask0_251_416' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='-32' y='57' width='218' height='198'%3E%3Cpath d='M-31.4434 57.8594H185.453V254.381H-31.4434V57.8594Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_251_416)'%3E%3Cmask id='mask1_251_416' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='-58' y='-5' width='290' height='304'%3E%3Cpath d='M121.941 -4.64844L231.108 179.255L51.3064 298.647L-57.8619 114.742L121.941 -4.64844Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask1_251_416)'%3E%3Cmask id='mask2_251_416' style='mask-type:luminance' maskUnits='userSpaceOnUse' x='-58' y='-5' width='290' height='304'%3E%3Cpath d='M121.941 -4.64844L231.108 179.255L51.3064 298.647L-57.8619 114.742L121.941 -4.64844Z' fill='white'/%3E%3C/mask%3E%3Cg mask='url(%23mask2_251_416)'%3E%3Cpath d='M148.582 234.148C162.886 218.77 171.484 197.978 177.67 176.839C183.113 158.182 186.323 138.416 184.475 118.701C183.602 109.148 181.958 98.8415 177.913 90.3846C173.889 81.9646 168.033 74.7704 161.153 69.3701C154.212 63.8562 146.044 60.1789 137.709 59.0397C128.269 57.7032 118.97 59.8891 109.686 61.8535C88.6107 66.3433 67.0454 65.413 45.8878 69.7536C27.1746 73.5773 8.32023 82.4944 -3.22911 100.86C-14.2247 118.404 -14.0234 140.522 -7.36291 160.156C0.309231 182.573 15.0875 200.773 31.9002 214.608C40.3114 221.573 49.3107 227.535 58.5126 233.034C67.6212 238.443 76.8489 243.819 86.3664 248.144C94.9875 252.069 103.965 254.476 113.25 253.351C122.074 252.298 130.629 248.657 138.19 243.27C141.955 240.588 145.389 237.465 148.582 234.148Z' fill='%23004D61'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_251_416'%3E%3Cpath d='M0 0H202V147.641H20C8.9543 147.641 0 138.686 0 127.641V0Z' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+          z-index: -1;
         }
 
         h5 {
@@ -357,6 +433,10 @@
           text-align: left;
           margin: 0;
           margin-bottom: 25px;
+
+          @media (max-width: 1024px) {
+            font-size: 25px;
+          }
         }
 
         ul {
@@ -377,6 +457,10 @@
             display: flex;
             gap: 10px;
             align-items: center;
+
+            @media (max-width: 1024px) {
+              font-size: 16px;
+            }
           }
 
           .list1::before {
