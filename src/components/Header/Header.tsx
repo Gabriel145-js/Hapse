@@ -8,12 +8,19 @@ import { Link } from "react-scroll";
 
 const bannerSalame = "/imgs/banners/salameQueijo.png";
 const trator = "/imgs/banners/trator.png";
-const vacas = "/imgs/banners/vacas.png";
+const vacas = "/imgs/banners/vacas.jpg";
 
 const Header = () => {
   const whatsappNumber = "5554996797398";
   const whatsappMessage =
     "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+
+  // icone SVG className mapeado por índice
+  const iconSvgClasses = [
+    styles.textoDoSeuPargrafo11,
+    styles.textoDoSeuPargrafo21,
+    styles.textoDoSeuPargrafo31,
+  ];
 
   const iconesElabel = [
     {
@@ -51,6 +58,7 @@ const Header = () => {
   return (
     <Element name="inicio">
       <header className={styles.bannerHeander}>
+        {/* faixa decorativa no rodapé do banner */}
         <div className={styles.faixaBanner}>
           <div className={styles.faixaBannerChild} />
           <div className={styles.faixaBannerChildPai}>
@@ -58,17 +66,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className={styles.imagensBanners}>
-          {bannersArredondados.map((banner, index) => (
-            <img
-              key={index}
-              className={banner.className}
-              src={banner.image}
-              alt=""
-            />
-          ))}
-        </div>
-
+        {/* ── LADO ESQUERDO: texto + icones + botões ── */}
         <div className={styles.titDireita}>
           <div className={styles.tituloBanner}>
             <i className={styles.transformandoDesafioEmOportContainer}>
@@ -97,11 +95,7 @@ const Header = () => {
                 <div className={styles.icone1Child} />
                 <b className={styles.experienciaTcnica}>{item.label}</b>
                 <img
-                  className={
-                    styles[
-                      `textoDoSeuPargrafo${index === 0 ? "1" : index + 1}1`
-                    ]
-                  }
+                  className={iconSvgClasses[index]}
                   src={item.icone}
                   alt=""
                 />
@@ -131,6 +125,15 @@ const Header = () => {
               </Link>
             </div>
           </div>
+        </div>
+
+        {/* ── LADO DIREITO: 3 imagens redondas ── */}
+        <div className={styles.imagensBanners}>
+          {bannersArredondados.map((banner, index) => (
+            <div key={index} className={banner.className}>
+              <img src={banner.image} alt="" />
+            </div>
+          ))}
         </div>
       </header>
     </Element>

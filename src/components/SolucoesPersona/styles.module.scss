@@ -73,6 +73,9 @@
                 width: 100%;
                 padding: 30px 20px;
                 gap: 20px;
+                box-shadow:
+                    10px -3px 23px #a5b884 inset,
+                    -8px 20px 13px rgba(0, 0, 0, 0.25);
             }
 
             h4 {
@@ -85,7 +88,7 @@
                 margin: 0;
 
                 @media(max-width: 1024px) {
-                    font-size: 25px;
+                    font-size: 22px;
                 }
             }
 
@@ -165,6 +168,9 @@
             @media (max-width: 1024px) {
                 width: 100%;
                 padding: 30px 20px;
+                box-shadow:
+                    10px -3px 23px #a5b884 inset,
+                    -8px 20px 13px rgba(0, 0, 0, 0.25);
             }
 
             ul {
@@ -213,6 +219,7 @@
         @media(max-width: 1024px) {
             font-size: 30px;
             text-align: center;
+            margin-top: 60px;
         }
 
         &::after {
@@ -236,7 +243,7 @@
 
         @media (max-width: 1024px) {
             flex-direction: column;
-            gap: 40px;
+            gap: 25px;
         }
 
         .setaCards {
@@ -249,10 +256,11 @@
             background-position: center;
             background-size: contain;
 
-                 @media(max-width: 1024px) {
-                    transform: rotate(89deg);
-                    width: 80px;
-                    min-width: 80px;
+            @media(max-width: 1024px) {
+                transform: rotate(89deg);
+                width: 60px;
+                min-width: 60px;
+                height: 24px;
             }
         }
 
@@ -270,6 +278,12 @@
             flex: 1;
             min-width: 0;
 
+            @media(max-width: 1024px) {
+                 box-shadow:
+                    10px -3px 23px #a5b884 inset,
+                    -8px 20px 13px rgba(0, 0, 0, 0.25);
+            }
+
             .numeroCardLinha {
                 position: absolute;
                 padding: 0 11px;
@@ -281,6 +295,13 @@
                 border-radius: 50%;
                 background: linear-gradient(180deg, #296a70, #9aa686 0.01%, #e89c3c);
                 border: 4px solid #6a8e3e;
+
+                @media(max-width: 1024px) {
+                    font-size: 20px;
+                    left: -16px;
+                    top: -14px;
+                    padding: 0 8px;
+                }
             }
 
             img {
@@ -308,7 +329,7 @@
                 margin: 0;
 
                 @media(max-width: 1024px) {
-                    font-size: 25px;
+                    font-size: 22px;
                 }
             }
 
