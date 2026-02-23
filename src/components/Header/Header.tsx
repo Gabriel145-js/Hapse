@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Element } from "react-scroll";
 import styles from "./styles.module.scss";
 import iconeBannerUm from "../../assets/svgs/icons/iconBannerUm.svg";

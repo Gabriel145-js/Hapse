@@ -1,4 +1,4 @@
-import React from "react";
+
 import logoFooter from "../../assets/svgs/logos/logoFooter.svg";
 import sebraeLogo from "../../assets/svgs/parceiroSebrae.svg";
 import styles from "./styles.module.scss";

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { Element } from "react-scroll";
 import iconeUsers from "../../assets/svgs/icons/users-bold.svg";
 import iconeCerebro from "../../assets/svgs/icons/brain-bold.svg";

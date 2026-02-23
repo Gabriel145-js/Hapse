@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import  { useEffect, useRef } from "react";
 import { Element } from "react-scroll";
 import styles from "./styles.module.scss";
 import logoMini from "../../assets/svgs/logos/logoMini.svg";

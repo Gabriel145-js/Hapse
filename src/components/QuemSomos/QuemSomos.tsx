@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./styles.module.scss";
 import missaoIcon from "../../assets/svgs/icons/missaoIcon.svg";
 import visaoIcon from "../../assets/svgs/icons/valoresIcon.svg";
