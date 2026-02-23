@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import styles from './styles.module.scss'
 import userAvaliacao from '../../assets/svgs/icons/userAvaliacao.svg'
 
+const avaliacao1 = '/imgs/pessoasAvaliacoes/avaliacaoum.jpeg'
+
 const Avaliacoes = () => {
     const [abertoIndex, setAbertoIndex] = useState<number | null>(null)
 
     const avaliacoesOriginal = [
-        { icone: userAvaliacao, nome: "João Fraga", empresa: "vulgo empres", stars: 4.5, descricao: "Excelente consultoria! Profissionais muito competentes, atendimento ágil e soluções personalizadas que realmente fizeram a diferença. Recomendo fortemente!" },
-        { icone: userAvaliacao, nome: "Maria Silva", empresa: "Agro Top", stars: 5.0, descricao: "Atendimento ágil e soluções personalizadas que realmente fizeram a diferença no nosso dia a dia." },
+        { icone: avaliacao1, nome: "Bruna Ferreira ", empresa: "", stars: 5.0, descricao: "A Hapse possui profissionais proativos, com amplo conhecimento técnico em alimentos e grande disponibilidade. Como atuo em serviço de inspeção municipal, tenho total segurança e confiança para indicar o trabalho da equipe às agroindústrias que fiscalizo." },
+        { icone: userAvaliacao, nome: "Maria Silva", empresa: "Agro Top", stars: 5.0, descricao: "" },
         { icone: userAvaliacao, nome: "Carlos Souza", empresa: "Fazenda Sol", stars: 4.0, descricao: "Recomendo fortemente o trabalho da Hapse, trouxeram clareza para nossos processos produtivos." },
         { icone: userAvaliacao, nome: "Ana Lima", empresa: "Laticínios X", stars: 4.5, descricao: "Profissionais que entendem do campo e da indústria. Ajudaram muito na nossa certificação." },
         { icone: userAvaliacao, nome: "Pedro Rocha", empresa: "Cooperativa Sul", stars: 5.0, descricao: "Parceria de longa data. Sempre inovando e trazendo soluções sustentáveis para o agro." },

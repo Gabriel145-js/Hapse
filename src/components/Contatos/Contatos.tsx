@@ -1,17 +1,60 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Element } from "react-scroll";
 import styles from "./styles.module.scss";
 import logoMini from "../../assets/svgs/logos/logoMini.svg";
 
 const Contatos = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const left = sectionRef.current?.querySelector("[data-slide-left]");
+    const right = sectionRef.current?.querySelector("[data-slide-right]");
+
+    if (!left || !right) return;
+
+    requestAnimationFrame(() => {
+      left.classList.add(styles.hiddenLeft);
+      right.classList.add(styles.hiddenRight);
+    });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          left.classList.remove(styles.hiddenLeft);
+          left.classList.add(styles.visibleItem);
+
+          setTimeout(() => {
+            right.classList.remove(styles.hiddenRight);
+            right.classList.add(styles.visibleItem);
+          }, 150);
+
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    const container = sectionRef.current?.querySelector(
+      `.${styles.containerContatos}`
+    );
+    if (container) observer.observe(container);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <Element name="contato">
-      <section id="contato" className={styles.containerMainContatos}>
+      <section
+        id="contato"
+        ref={sectionRef}
+        className={styles.containerMainContatos}
+      >
         <h1>Entre em Contato</h1>
 
         <div className={styles.containerContatos}>
           <form
             className={styles.formContatos}
+            data-slide-left
             action="https://formspree.io/f/{form_id}"
             method="POST"
           >
@@ -71,7 +114,10 @@ const Contatos = () => {
             <button type="submit">Enviar Email</button>
           </form>
 
-          <section className={styles.cardsInfosContatos}>
+          <section
+            className={styles.cardsInfosContatos}
+            data-slide-right
+          >
             <div className={styles.infosContatos}>
               <div className={styles.titEsub}>
                 <h4>Informações de Contato</h4>
@@ -95,9 +141,7 @@ const Contatos = () => {
 
             <div className={styles.cardsDifenciais}>
               <span className={styles.bgOverlay} />
-
               <h5>Por que escolher a gente?</h5>
-
               <ul>
                 <li className={styles.list1}>
                   Competência técnica e vivência profissional
@@ -108,7 +152,6 @@ const Contatos = () => {
                 <li className={styles.list3}>Foco em resultados concretos</li>
                 <li className={styles.list4}>Escuta ativa e humanizada</li>
               </ul>
-
               <img
                 className={styles.logoCardDiferenciais}
                 src={logoMini}

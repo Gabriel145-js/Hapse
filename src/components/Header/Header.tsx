@@ -6,16 +6,28 @@ import iconeBannerDois from "../../assets/svgs/icons/iconBannerDois.svg";
 import iconeBannerTres from "../../assets/svgs/icons/iconBannerTres.svg";
 import { Link } from "react-scroll";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
 const bannerSalame = "/imgs/banners/salameQueijo.png";
-const trator = "/imgs/banners/trator.png";
 const vacas = "/imgs/banners/vacas.jpg";
+
+
+const carrosselImages = [
+   "/imgs/banners/bannerDoisCarrossel.jpeg",
+  "/imgs/banners/bannerUmCarrossel.jpeg"
+ 
+
+];
 
 const Header = () => {
   const whatsappNumber = "5554996797398";
   const whatsappMessage =
     "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
 
-  // icone SVG className mapeado por índice
   const iconSvgClasses = [
     styles.textoDoSeuPargrafo11,
     styles.textoDoSeuPargrafo21,
@@ -52,13 +64,11 @@ const Header = () => {
   const bannersArredondados = [
     { image: bannerSalame, className: styles.salameEQueijo },
     { image: vacas, className: styles.vacaCuriosaEEngracadaOlhanIcon },
-    { image: trator, className: styles.designSemNome61 },
   ];
 
   return (
     <Element name="inicio">
       <header className={styles.bannerHeander}>
-        {/* faixa decorativa no rodapé do banner */}
         <div className={styles.faixaBanner}>
           <div className={styles.faixaBannerChild} />
           <div className={styles.faixaBannerChildPai}>
@@ -66,7 +76,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ── LADO ESQUERDO: texto + icones + botões ── */}
         <div className={styles.titDireita}>
           <div className={styles.tituloBanner}>
             <i className={styles.transformandoDesafioEmOportContainer}>
@@ -127,13 +136,36 @@ const Header = () => {
           </div>
         </div>
 
-        {/* ── LADO DIREITO: 3 imagens redondas ── */}
         <div className={styles.imagensBanners}>
           {bannersArredondados.map((banner, index) => (
             <div key={index} className={banner.className}>
               <img src={banner.image} alt="" />
             </div>
           ))}
+
+          <div className={`${styles.designSemNome61} ${styles.carrosselWrapper}`}>
+            <Swiper
+              modules={[Autoplay, Pagination, Navigation]}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              pagination={false}
+              navigation={false}
+              loop={true}
+              className={styles.carrosselSwiper}
+            >
+              {carrosselImages.map((src, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    src={src}
+                    alt={`Slide ${index + 1}`}
+                    className={styles.carrosselImg}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </header>
     </Element>

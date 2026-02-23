@@ -12,7 +12,7 @@
     }
 
     @media(max-width: 1024px) {
-        padding: 50px 50px 0 50px;
+        padding: 50px 32px 0 32px;
     }
 
     .containerContentFooter {
@@ -31,6 +31,10 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+
+            @media(max-width: 1024px) {
+                align-items: center;
+            }
 
             .logoFooter {
                 max-width: 279px;
@@ -90,16 +94,31 @@
         .linksRapidos {
             display: flex;
             flex-direction: column;
+
+            @media(max-width: 1024px) {
+                align-items: center;
+            }
+
         }
 
         .contatos {
             display: flex;
             flex-direction: column;
+
+            @media(max-width: 1024px) {
+                align-items: center;
+            }
+
         }
 
         .parceiros {
             display: flex;
             flex-direction: column;
+
+            @media(max-width: 1024px) {
+                align-items: center;
+            }
+
         }
     }
 
@@ -122,6 +141,11 @@
     padding: 0;
     margin: 0;
 
+    @media(max-width: 1024px) {
+        align-items: center;
+    }
+
+
     li {
         list-style: none;
         color: #706F6F !important;
@@ -136,7 +160,7 @@
             letter-spacing: 2px;
             cursor: pointer;
 
-            &:hover{
+            &:hover {
                 text-decoration: underline;
             }
         }
@@ -168,5 +192,9 @@
         text-align: end;
         text-decoration: none;
         margin-right: 20px;
+
+        @media(max-width: 1024px) {
+            font-size: 10px;
+        }
     }
 }
