@@ -435,17 +435,30 @@
         }
 
         // ← swiper usa aspect-ratio em vez de height:0
+        // ← swiper usa aspect-ratio 
         .designSemNome61 {
             width: 60%;
-            aspect-ratio: 1 / 1; // ← mantém círculo sem quebrar o Swiper
-            height: unset;
+            aspect-ratio: 1 / 1; 
+            height: auto; // Evite usar 'unset' aqui, 'auto' é mais seguro
             top: 6%;
             left: 40%;
             max-width: 400px;
+          
 
             .carrosselSwiper {
+                // Ao colocar o Swiper como absoluto, o Safari é obrigado a 
+                // respeitar a altura gerada pelo aspect-ratio do pai.
+                position: absolute; 
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: 100%; // ← ocupa todo o círculo
+                height: 100%; 
+                border-radius: 50%;
+                overflow: hidden;
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+                -webkit-backface-visibility: hidden;
+                transform: translateZ(0);
+                
             }
         }
 
