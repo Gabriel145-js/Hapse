@@ -44,7 +44,6 @@
 
             @media (max-width: 1024px) {
                 width: 100%;
-
             }
         }
 
@@ -53,6 +52,24 @@
         }
     }
 
+    /* ── Visibilidade desktop/mobile ── */
+    .desktopOnly {
+        display: flex;
+
+        @media (max-width: 768px) {
+            display: none !important;
+        }
+    }
+
+    .mobileOnly {
+        display: none;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    /* ── Marquee (desktop) ── */
     .marqueeContainer {
         position: relative;
         width: 100%;
@@ -65,23 +82,17 @@
         gap: 40px;
         width: max-content;
         padding-bottom: 16px;
-
         animation: scroll 60s linear infinite;
-
         will-change: transform;
         transform: translate3d(0, 0, 0);
     }
 
     @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-100% / 3));
-        }
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(calc(-100% / 3)); }
     }
 
+    /* ── Card base (usado nos dois contextos) ── */
     .card {
         min-width: 439px;
         width: 439px;
@@ -102,7 +113,15 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
+
+            img {
+                width: 65px;
+                height: 65px;
+                border-radius: 1000px;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
 
             .infosPerfil {
                 display: flex;
@@ -126,7 +145,8 @@
             }
         }
 
-        >p {
+        // base compartilhada
+        > p, .descricaoDesktop, .descricaoMobile {
             position: relative;
             font-size: 15px;
             font-family: vars.$fontPrimary;
@@ -135,13 +155,15 @@
             text-align: left;
             margin: 0;
             margin-top: 10px;
+        }
 
+        // Desktop: truncate CSS puro — card nunca muda de altura, sem flickering
+        .descricaoDesktop {
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            -webkit-text-stroke: 0;
         }
 
         .starsAvaliaco {
@@ -153,6 +175,42 @@
         }
     }
 
+    /* ── Mobile Swiper ── */
+    .mobileSlider {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 20px 0;
+
+        /* Override do .card dentro do slider mobile */
+        .card {
+            min-width: unset;
+            width: 100%;
+            height: auto;
+            min-height: 175px;
+            margin: 0 auto;
+        }
+
+        /* Estilos globais do Swiper */
+        :global(.swiper) {
+            padding-bottom: 40px !important;
+        }
+
+        :global(.swiper-pagination) {
+            bottom: 0;
+        }
+
+        :global(.swiper-pagination-bullet) {
+            background: rgba(255, 255, 255, 0.4);
+            opacity: 1;
+        }
+
+        :global(.swiper-pagination-bullet-active) {
+            background: #027b8f;
+            transform: scale(1.3);
+        }
+    }
+
+    /* ── FAQ ── */
     .subtitleAvaliacoes {
         padding: 0 108px;
         color: #ffffff;
@@ -194,7 +252,7 @@
         gap: 30px;
 
         @media (max-width: 1024px) {
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
         .cardPergunta {
@@ -226,8 +284,6 @@
             @media (max-width: 1024px) {
                 width: 100%;
                 padding: 16px 20px;
-
-
             }
 
             h5 {
@@ -299,7 +355,6 @@
 
                 &:hover {
                     transform: scale(1.05);
-                    transition: transform 0.3s ease-in-out;
                 }
 
                 &::after {
@@ -309,9 +364,6 @@
                     width: 25px;
                     height: 25px;
                     background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.0766 21.3266L23.8266 32.5766C23.4743 32.9288 22.9966 33.1267 22.4984 33.1267C22.0003 33.1267 21.5226 32.9288 21.1703 32.5766C20.8181 32.2244 20.6202 31.7466 20.6202 31.2485C20.6202 30.7503 20.8181 30.2726 21.1703 29.9203L29.2188 21.875H6.25C5.75272 21.875 5.27581 21.6775 4.92417 21.3259C4.57254 20.9742 4.375 20.4973 4.375 20C4.375 19.5027 4.57254 19.0258 4.92417 18.6742C5.27581 18.3226 5.75272 18.125 6.25 18.125H29.2188L21.1734 10.075C20.8212 9.72279 20.6233 9.24505 20.6233 8.7469C20.6233 8.24876 20.8212 7.77102 21.1734 7.41878C21.5257 7.06654 22.0034 6.86865 22.5016 6.86865C22.9997 6.86865 23.4774 7.06654 23.8297 7.41878L35.0797 18.6688C35.2545 18.8432 35.3932 19.0505 35.4877 19.2786C35.5822 19.5068 35.6307 19.7514 35.6304 19.9983C35.6301 20.2453 35.581 20.4898 35.486 20.7177C35.3909 20.9457 35.2518 21.1526 35.0766 21.3266Z' fill='white'/%3E%3C/svg%3E%0A");
-
-
-
                 }
             }
         }
@@ -321,13 +373,11 @@
             transition: height 0.3s ease-in-out;
 
             @media(max-width: 1024px) {
-
                 height: 390px;
             }
 
-            @media((max-width: 390px)and (min-width: 320px)) {
+            @media((max-width: 390px) and (min-width: 320px)) {
                 height: 490px;
-
             }
 
             h5::after {
@@ -336,3 +386,45 @@
         }
     }
 }
+
+    /* ── Descrição mobile com ver mais ── */
+    .descricaoWrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        gap: 6px;
+    }
+
+    .descricaoMobile {
+        position: relative;
+        font-size: 15px;
+        font-family: vars.$fontPrimary;
+        font-weight: vars.$weightBold;
+        color: #fff;
+        text-align: left;
+        margin: 0;
+    }
+
+    .verMaisBtn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: vars.$fontPrimary;
+        font-weight: vars.$weightBold;
+        font-size: 13px;
+        color: #7dd6e8;
+        padding: 0;
+        text-align: left;
+        width: fit-content;
+        transition: color 0.2s;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+
+    /* Card expandido no mobile: altura automática */
+    .cardExpandido {
+        height: auto !important;
+        min-height: 205px;
+    }
