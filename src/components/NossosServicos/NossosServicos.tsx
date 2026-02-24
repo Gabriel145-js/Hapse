@@ -1,4 +1,4 @@
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Element } from "react-scroll";
 import styles from "./styles.module.scss";
 
@@ -9,38 +9,16 @@ const NossosServicos = () => {
   const whatsappMessage = "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
   const sectionRef = useRef<HTMLElement>(null);
 
-  // ── cardInfo: slide da esquerda (desktop + mobile) ──
   useEffect(() => {
-    const el = sectionRef.current?.querySelector(`[data-slide]`);
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.slideInLeft);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  // ── cardParceiros: efeito dominó ──
-  useEffect(() => {
-    const els = sectionRef.current?.querySelectorAll("[data-domino]");
-    if (!els || els.length === 0) return;
+    const elements = sectionRef.current?.querySelectorAll("[data-anim]");
+    if (!elements || elements.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const delay = Number((entry.target as HTMLElement).dataset.domino) * 180;
-            setTimeout(() => {
-              entry.target.classList.add(styles.dominoVisible);
-            }, delay);
+            // Apenas adiciona a classe que dispara o keyframe
+            entry.target.classList.add(styles.startAnim);
             observer.unobserve(entry.target);
           }
         });
@@ -48,14 +26,8 @@ const NossosServicos = () => {
       { threshold: 0.15 }
     );
 
-    // estado inicial via JS para evitar flash
-    requestAnimationFrame(() => {
-      els.forEach((el) => {
-        (el as HTMLElement).style.opacity = "0";
-        (el as HTMLElement).style.transform = "translateY(30px)";
-        observer.observe(el);
-      });
-    });
+    // Removemos o requestAnimationFrame daqui! O CSS fará o trabalho inicial.
+    elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
@@ -63,13 +35,13 @@ const NossosServicos = () => {
   return (
     <Element name="nossos-servicos">
       <section id="nossos-servicos" ref={sectionRef} className={styles.containerMainServicos}>
-        <h1>Nossos Serviços</h1>
+        <h1 data-anim="up">Nossos Serviços</h1>
 
         <section className={styles.containerCardsServicos}>
 
-          {/* ── slide da esquerda ── */}
-          <div className={`${styles.cardInfo} ${styles.slideLeft}`} data-slide>
-            <h4>Oque fazemos por você?</h4>
+          {/* ── slide da esquerda (definimos data-anim="left") ── */}
+          <div className={styles.cardInfo} data-anim="left">
+            <h4>O que fazemos por você?</h4>
             <p>
               A Hapse oferece consultoria personalizada para produtores rurais,
               agroindústrias e serviços de alimentação, com foco em:
@@ -91,9 +63,10 @@ const NossosServicos = () => {
             </a>
           </div>
 
-          {/* ── dominó ── */}
+          {/* ── Lado direito (Parceiros e Dominó, data-anim="up") ── */}
           <div className={styles.cardParceiros}>
-            <div className={styles.cardParceiroSebrae} data-domino="0">
+            
+            <div className={styles.cardParceiroSebrae} data-anim="up">
               <div className={styles.titSubtit}>
                 <div className={styles.textContent}>
                   <h4>Parceiros SEBRAE</h4>
@@ -114,9 +87,10 @@ const NossosServicos = () => {
             </div>
 
             <div className={styles.listaBeneficios}>
-              <p data-domino="1">Estratégias personalizadas</p>
-              <p data-domino="2">Solução para o seu negócio</p>
-              <p data-domino="3">Sustentabilidade e certificações</p>
+              {/* Note as classes domino para controlar o delay do keyframe */}
+              <p className={styles.domino1} data-anim="up">Estratégias personalizadas</p>
+              <p className={styles.domino2} data-anim="up">Solução para o seu negócio</p>
+              <p className={styles.domino3} data-anim="up">Sustentabilidade e certificações</p>
             </div>
           </div>
 
