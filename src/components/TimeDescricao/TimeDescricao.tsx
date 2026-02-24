@@ -6,8 +6,7 @@ const fotoRafa = "/imgs/fotoRafa.jpeg"
 
 const TimeDescricao = () => {
 
-  const whatsappNumber = "5554996797398";
-  const whatsappMessage = "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+ 
 
   const cardTime = [
     {
