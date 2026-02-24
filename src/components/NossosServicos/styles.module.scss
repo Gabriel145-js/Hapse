@@ -3,13 +3,27 @@
 
 // ── KEYFRAMES ──
 @keyframes slideFromLeft {
-    from { opacity: 0; transform: translateX(-80px); }
-    to   { opacity: 1; transform: translateX(0); }
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -269,10 +283,15 @@
                     background-image: url("data:image/svg+xml,%3Csvg width='37' height='35' viewBox='0 0 40 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35.0766 21.3266L23.8266 32.5766C23.4743 32.9288 22.9966 33.1267 22.4984 33.1267C22.0003 33.1267 21.5226 32.9288 21.1703 32.5766C20.8181 32.2244 20.6202 31.7466 20.6202 31.2485C20.6202 30.7503 20.8181 30.2726 21.1703 29.9203L29.2188 21.875H6.25C5.75272 21.875 5.27581 21.6775 4.92417 21.3259C4.57254 20.9742 4.375 20.4973 4.375 20C4.375 19.5027 4.57254 19.0258 4.92417 18.6742C5.27581 18.3226 5.75272 18.125 6.25 18.125H29.2188L21.1734 10.075C20.8212 9.72279 20.6233 9.24505 20.6233 8.7469C20.6233 8.24876 20.8212 7.77102 21.1734 7.41878C21.5257 7.06654 22.0034 6.86865 22.5016 6.86865C22.9997 6.86865 23.4774 7.06654 23.8297 7.41878L35.0797 18.6688C35.2545 18.8432 35.3932 19.0505 35.4877 19.2786C35.5822 19.5068 35.6307 19.7514 35.6304 19.9983C35.6301 20.2453 35.581 20.4898 35.486 20.7177C35.3909 20.9457 35.2518 21.1526 35.0766 21.3266Z' fill='white'/%3E%3C/svg%3E%0A");
                 }
 
-                &:hover {
-                    transform: scale(1.05);
-                    transition: transform 0.3s ease-in-out;
+                @media(min-width: 1024px) {
+                    &:hover {
+                        transform: scale(1.05);
+                        transition: transform 0.3s ease-in-out;
+                    }
                 }
+
+
+
             }
         }
 
@@ -281,9 +300,9 @@
             gap: 35px;
             flex-direction: column;
 
-             @media (max-width: 1024px) {
+            @media (max-width: 1024px) {
                 gap: 30px;
-             }
+            }
 
             .cardParceiroSebrae {
                 width: 100%;
@@ -306,8 +325,8 @@
                     padding: 30px 20px;
                     border-width: 4px;
                     box-shadow:
-                    10px -3px 23px #a5b884 inset,
-                    -8px 20px 13px rgba(0, 0, 0, 0.25);
+                        10px -3px 23px #a5b884 inset,
+                        -8px 20px 13px rgba(0, 0, 0, 0.25);
                 }
 
                 .imgFlag {
@@ -466,11 +485,14 @@
                         }
                     }
 
-                    &:hover {
-                        transform: scale(1.05);
-                        transition: transform 0.3s ease-in-out;
-                        text-decoration: underline;
+                    @media(min-width: 1024px) {
+                        &:hover {
+                            transform: scale(1.05);
+                            transition: transform 0.3s ease-in-out;
+                            text-decoration: underline;
+                        }
                     }
+
                 }
             }
 
@@ -505,8 +527,8 @@
                         gap: 8px;
                         border-width: 4px;
                         box-shadow:
-                    10px -3px 23px #a5b884 inset,
-                    -8px 20px 13px rgba(0, 0, 0, 0.25);
+                            10px -3px 23px #a5b884 inset,
+                            -8px 20px 13px rgba(0, 0, 0, 0.25);
                     }
 
                     &::before {

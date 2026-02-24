@@ -160,9 +160,14 @@
             letter-spacing: 2px;
             cursor: pointer;
 
-            &:hover {
-                text-decoration: underline;
+            @media(min-width: 1024px) {
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
+
+
         }
     }
 }

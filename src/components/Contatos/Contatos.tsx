@@ -1,5 +1,5 @@
 import  { useEffect, useRef } from "react";
-import { Element } from "react-scroll";
+
 import styles from "./styles.module.scss";
 import logoMini from "../../assets/svgs/logos/logoMini.svg";
 
@@ -43,7 +43,7 @@ const Contatos = () => {
   }, []);
 
   return (
-    <Element name="contato">
+
       <section
         id="contato"
         ref={sectionRef}
@@ -161,7 +161,7 @@ const Contatos = () => {
           </section>
         </div>
       </section>
-    </Element>
+    
   );
 };
 

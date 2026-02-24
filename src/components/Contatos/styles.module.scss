@@ -3,25 +3,25 @@
 
 
 .hiddenLeft {
-    opacity: 0 !important;
-    transform: translateY(50px) !important;
-    transition: none !important;
+  opacity: 0 !important;
+  transform: translateY(50px) !important;
+  transition: none !important;
 }
 
 
 .hiddenRight {
-    opacity: 0 !important;
-    transform: translateY(50px) !important;
-    transition: none !important;
+  opacity: 0 !important;
+  transform: translateY(50px) !important;
+  transition: none !important;
 }
 
 
 .visibleItem {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition:
-        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .containerMainContatos {
@@ -258,9 +258,12 @@
           width: 100%;
         }
 
-        &:hover {
-          transform: scale(1.05);
-          transition: transform 0.3s ease-in-out;
+        @media(min-width: 1024px) {
+          &:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+          }
+
         }
 
         &::before {

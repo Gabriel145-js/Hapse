@@ -1,5 +1,5 @@
 import  { useEffect, useRef } from "react";
-import { Element } from "react-scroll";
+
 import iconeUsers from "../../assets/svgs/icons/users-bold.svg";
 import iconeCerebro from "../../assets/svgs/icons/brain-bold.svg";
 import iconeRocket from "../../assets/svgs/icons/rocket-bold.svg";
@@ -102,7 +102,7 @@ const SolucoesPersona = () => {
   }, []);
 
   return (
-    <Element name="solucoes">
+
       <section
         id="solucoes"
         ref={sectionRef}
@@ -169,7 +169,6 @@ const SolucoesPersona = () => {
           </div>
         </div>
       </section>
-    </Element>
   );
 };
 

@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import missaoIcon from "../../assets/svgs/icons/missaoIcon.svg";
 import visaoIcon from "../../assets/svgs/icons/valoresIcon.svg";
 import valoresIcon from "../../assets/svgs/icons/visaoIcon.svg";
-import { Element } from "react-scroll";
 
 const fotoFer = "/imgs/fotoFer.jpeg";
 const fotoMay = "/imgs/fotoMay.jpeg";
@@ -16,7 +15,7 @@ const QuemSomos = () => {
 
   const sectionRef = useRef<HTMLElement>(null);
 
-  //  Animação desktop: seção inteira
+  // Animação desktop: seção inteira
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -31,7 +30,7 @@ const QuemSomos = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Animação mobile: elemento por elemento ──
+  // Animação mobile: elemento por elemento
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
     if (!isMobile) return;
@@ -51,10 +50,10 @@ const QuemSomos = () => {
       },
       { threshold: 0.15 },
     );
-   
+
     requestAnimationFrame(() => {
       elements.forEach((el) => {
-        el.classList.add(styles.animHidden); 
+        el.classList.add(styles.animHidden);
         observer.observe(el);
       });
     });
@@ -108,76 +107,74 @@ const QuemSomos = () => {
   ];
 
   return (
-    <Element name="quem-somos">
-      <section
-        id="quem-somos"
-        ref={sectionRef}
-        className={styles.containerMainQuemSomos}
-      >
-        <h1>Quem somos</h1>
+    <section
+      id="quem-somos"
+      ref={sectionRef}
+      className={styles.containerMainQuemSomos}
+    >
+      <h1>Quem somos</h1>
 
-        <div className={styles.containerCards}>
-          <div className={`${styles.containerCardLeft} ${styles.slideLeft}`}>
-            <article className={styles.articleQuemSomos} data-anim>
-              <p>
-                A HAPSE Consultoria nasceu em Caxias do Sul (RS) com o propósito
-                de transformar a cadeia agroalimentar por meio de soluções
-                personalizadas, humanizadas e eficazes. Atuamos diretamente com
-                produtores de alimentos — da agroindústria às propriedades
-                rurais
-              </p>
-            </article>
+      <div className={styles.containerCards}>
+        <div className={`${styles.containerCardLeft} ${styles.slideLeft}`}>
+          <article className={styles.articleQuemSomos} data-anim>
+            <p>
+              A HAPSE Consultoria nasceu em Caxias do Sul (RS) com o propósito
+              de transformar a cadeia agroalimentar por meio de soluções
+              personalizadas, humanizadas e eficazes. Atuamos diretamente com
+              produtores de alimentos — da agroindústria às propriedades
+              rurais
+            </p>
+          </article>
 
-            <div>
-              <article className={styles.articleValores}>
-                {cardsValores.map((item, index) => (
-                  <div className={styles.cardValores} key={index} data-anim>
-                    <img src={item.icone} alt="" />
-                    <span>{item.label}</span>
-                    <p>{item.texto}</p>
-                  </div>
-                ))}
-              </article>
-            </div>
-
-            <a
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.ctaQuemSomos}
-              data-anim
-            >
-              Fale agora com consultor especialista
-            </a>
-          </div>
-
-          {/* ── LADO DIREITO ── */}
-          <div className={`${styles.containerCardRight} ${styles.slideRight}`}>
-            <h2 data-anim>Nosso time</h2>
-
-            <div className={styles.containerTime}>
-              {carsTime.map((item, index) => (
-                <div className={styles.cardTime} key={index} data-anim>
-                  <article className={styles.articleTime}>
-                    <div
-                      className={styles.imagemPessoa}
-                      style={{ backgroundImage: `url(${item.iconePessoa})` }}
-                    />
-                    <div className={styles.infosPessoa}>
-                      <span>{item.nomePessoa}</span>
-                      <p>{item.descricaoPessoa}</p>
-                      <a href="/conheca-nosso-time">
-                        Saiba mais sobre {item.primeiroNome}
-                      </a>
-                    </div>
-                  </article>
+          <div>
+            <article className={styles.articleValores}>
+              {cardsValores.map((item, index) => (
+                <div className={styles.cardValores} key={index} data-anim>
+                  <img src={item.icone} alt="" />
+                  <span>{item.label}</span>
+                  <p>{item.texto}</p>
                 </div>
               ))}
-            </div>
+            </article>
+          </div>
+
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaQuemSomos}
+            data-anim
+          >
+            Fale agora com consultor especialista
+          </a>
+        </div>
+
+        {/* ── LADO DIREITO ── */}
+        <div className={`${styles.containerCardRight} ${styles.slideRight}`}>
+          <h2 data-anim>Nosso time</h2>
+
+          <div className={styles.containerTime}>
+            {carsTime.map((item, index) => (
+              <div className={styles.cardTime} key={index} data-anim>
+                <article className={styles.articleTime}>
+                  <div
+                    className={styles.imagemPessoa}
+                    style={{ backgroundImage: `url(${item.iconePessoa})` }}
+                  />
+                  <div className={styles.infosPessoa}>
+                    <span>{item.nomePessoa}</span>
+                    <p>{item.descricaoPessoa}</p>
+                    <a href="/conheca-nosso-time">
+                      Saiba mais sobre {item.primeiroNome}
+                    </a>
+                  </div>
+                </article>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    </Element>
+      </div>
+    </section>
   );
 };
 

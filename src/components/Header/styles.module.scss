@@ -280,8 +280,11 @@
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
 
-    &:hover {
-        transform: scale(1.05);
+    @media(min-width: 1024px) {
+        &:hover {
+            transform: scale(1.05);
+        }
+
     }
 
     @media (max-width: 768px) {
@@ -299,6 +302,9 @@
         color: #41555c !important;
         font-weight: bold;
         font-size: clamp(14px, 1.5vw, 16px);
+        background-color: transparent;
+        border: none;
+        padding: 0;
 
         &::after {
             content: '';
@@ -438,7 +444,7 @@
         // ← swiper usa aspect-ratio 
         .designSemNome61 {
             width: 60%;
-            aspect-ratio: 1 / 1; 
+            aspect-ratio: 1 / 1;
             height: auto; // Evite usar 'unset' aqui, 'auto' é mais seguro
             top: 6%;
             left: 40%;
@@ -452,12 +458,12 @@
             .carrosselSwiper {
                 // Ao colocar o Swiper como absoluto, o Safari é obrigado a 
                 // respeitar a altura gerada pelo aspect-ratio do pai.
-                position: absolute; 
+                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 100%; 
-                
+                height: 100%;
+
             }
         }
 

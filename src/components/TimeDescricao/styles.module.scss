@@ -68,7 +68,8 @@
             align-items: center;
             padding: 32px;
             gap: 13px;
-            box-shadow: 10px -3px 23px #a5b884 inset, -22px 29px 13px rgba(0, 0, 0, 0.25);
+            box-shadow: 10px -3px 23px #a5b884 inset,
+            -22px 29px 13px rgba(0, 0, 0, 0.25);
             border-radius: 25px;
             background: linear-gradient(255.01deg, rgba(106, 142, 62, 0.78), rgba(0, 77, 97, 0.78));
             position: relative;
@@ -153,9 +154,12 @@
                     width: 100%;
                 }
 
-                &:hover {
-                    transform: scale(1.05);
+                @media(max-width: 1024px) {
+                    &:hover {
+                        transform: scale(1.05);
+                    }
                 }
+
             }
         }
     }

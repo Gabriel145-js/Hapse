@@ -1,11 +1,9 @@
-import  { useState } from "react";
-import { Link } from "react-scroll";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./styles.module.scss";
 import logoMini from "../../assets/svgs/logos/logoMini.svg";
 import logoMob from "../../assets/svgs/logos/logoMobile.svg";
 import sebraeMini from "../../assets/svgs/logos/sebraeMini.svg";
-
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -17,10 +15,16 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsMobileMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMobileMenuOpen(false);
 
+  const handleNavClick = (id: string) => {
+    closeMenu();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className={style.containerNavbar}>
 
-      {/* ── Hambúrguer — fixo à esquerda no mobile ── */}
+      {/* ── Hambúrguer ── */}
       <button
         className={`${style.hamburger} ${isMobileMenuOpen ? style.active : ""}`}
         onClick={toggleMenu}
@@ -32,7 +36,7 @@ const Navbar: React.FC = () => {
         <span className={style.bar} />
       </button>
 
-      {/* ── Logo — centralizada absolutamente no mobile ── */}
+      {/* ── Logo ── */}
       <div className={style.logoNavbar}>
         <a href="/" className={style.logoLink}>
           <img className={style.logo} src={logoMini} alt="Hapse Consultoria" />
@@ -64,23 +68,15 @@ const Navbar: React.FC = () => {
           &times;
         </button>
 
-        <Link to="quem-somos" spy smooth offset={0} duration={500} onClick={closeMenu}>
-          Quem Somos
-        </Link>
-        <Link to="nossos-servicos" spy smooth offset={0} duration={500} onClick={closeMenu}>
-          Nossos Serviços
-        </Link>
-        <Link to="solucoes" spy smooth offset={0} duration={500} onClick={closeMenu}>
-          Soluções Personalizadas
-        </Link>
-        <Link to="contato" spy smooth offset={0} duration={500} onClick={closeMenu}>
-          Contatos
-        </Link>
+        <a onClick={() => handleNavClick("quem-somos")}>Quem Somos</a>
+        <a onClick={() => handleNavClick("nossos-servicos")}>Nossos Serviços</a>
+        <a onClick={() => handleNavClick("solucoes")}>Soluções Personalizadas</a>
+        <a onClick={() => handleNavClick("contato")}>Contatos</a>
+
         <NavLink to="/" onClick={closeMenu}>
           <img src={sebraeMini} alt="Sebrae" />
         </NavLink>
 
-        {/* Botão contato dentro do drawer */}
         <a
           href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
           target="_blank"

@@ -221,9 +221,12 @@
         width: fit-content;
         transition: color 0.2s;
 
-        &:hover {
-            color: #ffffff;
+        @media(min-width: 1024px) {
+            &:hover {
+                color: #ffffff;
+            }
         }
+
     }
 
     .cardExpandido {
@@ -404,8 +407,11 @@
                     text-decoration: none;
                     transition: transform 0.3s ease-in-out;
 
-                    &:hover {
-                        transform: scale(1.05);
+                    @media(max-width: 1024px) {
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
                     }
 
                     &::after {

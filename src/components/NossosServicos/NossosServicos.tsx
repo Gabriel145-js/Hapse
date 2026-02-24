@@ -1,5 +1,5 @@
 import  { useEffect, useRef } from "react";
-import { Element } from "react-scroll";
+
 import styles from "./styles.module.scss";
 
 const sebraeFlag = "/imgs/sebraeFlag.png";
@@ -61,7 +61,7 @@ const NossosServicos = () => {
   }, []);
 
   return (
-    <Element name="nossos-servicos">
+
       <section id="nossos-servicos" ref={sectionRef} className={styles.containerMainServicos}>
         <h1>Nossos Serviços</h1>
 
@@ -122,7 +122,7 @@ const NossosServicos = () => {
 
         </section>
       </section>
-    </Element>
+
   );
 };
 

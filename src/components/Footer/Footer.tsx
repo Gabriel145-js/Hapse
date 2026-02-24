@@ -1,8 +1,6 @@
-
 import logoFooter from "../../assets/svgs/logos/logoFooter.svg";
 import sebraeLogo from "../../assets/svgs/parceiroSebrae.svg";
 import styles from "./styles.module.scss";
-import { Link } from "react-scroll";
 
 const Footer = () => {
   const parceiros = [{ logoParceiro: sebraeLogo, linkParceiro: "/" }];
@@ -10,6 +8,13 @@ const Footer = () => {
   const whatsappNumber = "5554996797398";
   const whatsappMessage =
     "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+
+  const scrollTo = (id: string, offset = 0) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY + offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
 
   return (
     <>
@@ -26,17 +31,9 @@ const Footer = () => {
               CONSUMIDOR EM UMA SÓ CADEIA.
             </p>
             <div className={styles.containerRedesSociais}>
-              <a
-                href="/"
-                className={styles.iconeInsta}
-                aria-label="Instagram"
-              ></a>
-              <a
-                href="/"
-                className={styles.iconeLinkedin}
-                aria-label="LinkedIn"
-              ></a>
-              <a href="/" className={styles.iconeWpp} aria-label="WhatsApp"></a>
+              <a href="/" className={styles.iconeInsta} aria-label="Instagram" />
+              <a href="/" className={styles.iconeLinkedin} aria-label="LinkedIn" />
+              <a href="/" className={styles.iconeWpp} aria-label="WhatsApp" />
             </div>
           </article>
 
@@ -44,22 +41,22 @@ const Footer = () => {
             <h4 className={styles.titulosFooter}>Links Rápidos</h4>
             <ul className={styles.listasFooter}>
               <li>
-                <Link to="inicio" offset={-80} smooth={true} duration={500}>Inicio</Link>
+                <a onClick={() => scrollTo("inicio", -80)}>Inicio</a>
               </li>
               <li>
-                <Link to="quem-somos" smooth={true} duration={500}>Quem Somos</Link>
+                <a onClick={() => scrollTo("quem-somos")}>Quem Somos</a>
               </li>
               <li>
-                <Link to="servicos" smooth={true} duration={500}>Nossos Serviços</Link>
+                <a onClick={() => scrollTo("servicos")}>Nossos Serviços</a>
               </li>
               <li>
-                <Link to="solucoes" smooth={true} duration={500}>Soluções</Link>
+                <a onClick={() => scrollTo("solucoes")}>Soluções</a>
               </li>
               <li>
-                <a href='/conheca-nosso-time'>Nossa Equipe</a>
+                <a href="/conheca-nosso-time">Nossa Equipe</a>
               </li>
               <li>
-                <Link to="contatos" smooth={true} duration={500}>Contatos</Link>
+                <a onClick={() => scrollTo("contatos")}>Contatos</a>
               </li>
             </ul>
           </nav>
@@ -68,7 +65,13 @@ const Footer = () => {
             <h4 className={styles.titulosFooter}>Contatos</h4>
             <ul className={styles.listasFooter}>
               <li>
-                <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" rel="noopener noreferrer">(54) 99679-7398</a>
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  (54) 99679-7398
+                </a>
               </li>
               <li>
                 <a href="mailto:contato@hapseconsultoria.com">
@@ -94,7 +97,7 @@ const Footer = () => {
 
       <div className={styles.copyRight}>
         <p>
-          © 2024 HAPSE consultoria agroalimentar. Todos os direitos reservados.
+          © 2026 HAPSE consultoria agroalimentar. Todos os direitos reservados.
         </p>
         <a href="/">Desenvolvido por GabrielZaparolliDEV</a>
       </div>
