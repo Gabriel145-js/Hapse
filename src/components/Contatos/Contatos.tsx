@@ -128,10 +128,10 @@ const Contatos = () => {
 
               <ul>
                 <li className={styles.phoneList}>
-                  <a href="">(54) 996797398</a>
+                  <a>(54) 996797398</a>
                 </li>
                 <li className={styles.emailList}>
-                  <a href="">contato@hapseconsultoria.com</a>
+                  <a href="mailto:contato@hapseconsultoria.com">contato@hapseconsultoria.com</a>
                 </li>
                 <li className={styles.horarioList}>
                   Segunda à Sexta: 8h às 18h

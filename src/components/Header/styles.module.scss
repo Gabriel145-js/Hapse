@@ -1,7 +1,53 @@
 @use '../../styles/variables' as vars;
 
+/* ════════════════════════════════════════════
+   KEYFRAMES — só transform + opacity (GPU)
+════════════════════════════════════════════ */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+/* ════════════════════════════════════════════
+   CLASSES DE ANIMAÇÃO
+════════════════════════════════════════════ */
+
+/* Texto da esquerda */
+.animFadeSlide {
+    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Imagens circulares — zoom escalonado */
+.zoomIn1 {
+    animation: zoomIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+.zoomIn2 {
+    animation: zoomIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.zoomIn3 {
+    animation: zoomIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+/* ════════════════════════════════════════════
+   COMPONENTE
+════════════════════════════════════════════ */
 
 .bannerHeander {
     width: 100%;
@@ -19,24 +65,21 @@
     align-items: stretch;
 
     @media(min-width:800px) {
-        gap: 40px
+        gap: 40px;
     }
 
-    /* ── tablet ── */
     @media (max-width: 1024px) {
         min-height: unset;
         flex-direction: column;
         align-items: center;
     }
 
-    /* ── mobile ── */
     @media (max-width: 768px) {
         flex-direction: column;
         min-height: unset;
         align-items: center;
     }
 }
-
 
 .faixaBanner {
     position: absolute;
@@ -118,10 +161,7 @@
         gap: 24px;
         justify-content: center;
     }
-
-
 }
-
 
 .tituloBanner {
     align-self: stretch;
@@ -162,7 +202,6 @@
     }
 }
 
-
 .oferecemosServiosPersonaliz {
     width: 100%;
     max-width: 580px;
@@ -177,7 +216,6 @@
         max-width: 100%;
     }
 }
-
 
 .iconesBanner {
     display: flex;
@@ -202,14 +240,8 @@
     gap: 10px;
 }
 
-.icone1 {
-    justify-content: flex-end;
-}
-
-.icone3 {
-    justify-content: center;
-    gap: 9px;
-}
+.icone1 { justify-content: flex-end; }
+.icone3 { justify-content: center; gap: 9px; }
 
 .icone1Child {
     width: clamp(44px, 6vw, 80px);
@@ -284,7 +316,6 @@
         &:hover {
             transform: scale(1.05);
         }
-
     }
 
     @media (max-width: 768px) {
@@ -305,6 +336,7 @@
         background-color: transparent;
         border: none;
         padding: 0;
+        cursor: pointer;
 
         &::after {
             content: '';
@@ -318,7 +350,6 @@
         }
     }
 }
-
 
 .imagensBanners {
     position: absolute;
@@ -349,7 +380,6 @@
         }
     }
 
-
     .designSemNome61 {
         width: 50%;
         top: 12%;
@@ -358,10 +388,8 @@
         border: clamp(5px, 0.6vw, 9px) solid #6A8E3E;
         box-shadow: -15px 16px 20.5px 0 rgba(0, 0, 0, 0.40);
 
-
         @media((min-width: 1024px) and (max-width: 1599px)) {
             top: 22%;
-
         }
     }
 
@@ -372,7 +400,6 @@
         z-index: 1;
         border: clamp(5px, 0.6vw, 9px) solid #004D61;
         box-shadow: -15px 16px 20.5px 0 rgba(0, 0, 0, 0.40);
-
 
         @media(max-width: 1399px) {
             top: 14%;
@@ -397,7 +424,6 @@
         border: clamp(5px, 0.6vw, 9px) solid #E89C3C;
         box-shadow: -15px 16px 20.5px 0 rgba(0, 0, 0, 0.40);
 
-
         @media((min-width: 1024px) and (max-width: 1599px)) {
             top: 34%;
         }
@@ -405,11 +431,9 @@
         @media((min-width: 1600px) and (max-width: 1920px)) {
             top: 30%;
         }
-
-
     }
 
-    /* ── tablet ── */
+    /* ── tablet / mobile ── */
     @media (max-width: 1024px) {
         position: relative;
         top: auto;
@@ -424,7 +448,6 @@
             padding-top: 78%;
         }
 
-        // ← apenas as imagens estáticas usam o truque height:0
         .salameEQueijo,
         .vacaCuriosaEEngracadaOlhanIcon {
             height: 0;
@@ -440,30 +463,29 @@
             }
         }
 
-        // ← swiper usa aspect-ratio em vez de height:0
-        // ← swiper usa aspect-ratio 
         .designSemNome61 {
             width: 60%;
             aspect-ratio: 1 / 1;
-            height: auto; // Evite usar 'unset' aqui, 'auto' é mais seguro
+            height: auto;
             top: 6%;
             left: 40%;
             max-width: 400px;
             box-shadow: -15px 16px 20.5px 0 rgba(0, 0, 0, 0.40);
-            // Hacks mágicos para o iOS cortar o círculo perfeitamente no Swiper
             -webkit-mask-image: -webkit-radial-gradient(white, black);
             -webkit-backface-visibility: hidden;
             transform: translateZ(0);
 
+            /* mantém o zoom mesmo com o transform do iOS hack */
+            &.zoomIn3 {
+                animation: zoomIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+            }
+
             .carrosselSwiper {
-                // Ao colocar o Swiper como absoluto, o Safari é obrigado a 
-                // respeitar a altura gerada pelo aspect-ratio do pai.
                 position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
-
             }
         }
 
@@ -481,5 +503,4 @@
             left: 5%;
         }
     }
-
 }

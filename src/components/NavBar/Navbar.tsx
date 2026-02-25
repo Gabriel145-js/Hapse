@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
       </button>
 
       {/* ── Logo ── */}
-      <div className={style.logoNavbar}>
+      <a href="/" className={style.logoNavbar}>
         <a href="/" className={style.logoLink}>
           <img className={style.logo} src={logoMini} alt="Hapse Consultoria" />
           <img className={style.logoMobile} src={logoMob} alt="" />
@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
           <h1>HapseConsultoria</h1>
           <p>AgroAlimentar</p>
         </div>
-      </div>
+      </a>
 
       {/* ── Overlay ── */}
       <div

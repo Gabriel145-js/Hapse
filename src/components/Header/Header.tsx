@@ -31,33 +31,16 @@ const Header = () => {
   const iconesElabel = [
     {
       icone: iconeBannerUm,
-      label: (
-        <>
-          Experiência <br /> Técnica
-        </>
-      ),
+      label: (<>Experiência <br /> Técnica</>),
     },
     {
       icone: iconeBannerDois,
-      label: (
-        <>
-          Soluções <br /> Adaptativas
-        </>
-      ),
+      label: (<>Soluções <br /> Adaptativas</>),
     },
     {
       icone: iconeBannerTres,
-      label: (
-        <>
-          Visão <br /> Sistêmica
-        </>
-      ),
+      label: (<>Visão <br /> Sistêmica</>),
     },
-  ];
-
-  const bannersArredondados = [
-    { image: bannerSalame, className: styles.salameEQueijo },
-    { image: vacas, className: styles.vacaCuriosaEEngracadaOlhanIcon },
   ];
 
   const handleScrollToSolucoes = () => {
@@ -73,17 +56,16 @@ const Header = () => {
         </div>
       </div>
 
-      <div className={styles.titDireita}>
+      {/* ── TEXTO — anima com fadeSlide ── */}
+      <div className={`${styles.titDireita} ${styles.animFadeSlide}`}>
         <div className={styles.tituloBanner}>
           <i className={styles.transformandoDesafioEmOportContainer}>
             <span>Transformando desafio em </span>
             <span className={styles.oportunidades}>
-              Oportunidades
-              <br />
+              Oportunidades<br />
             </span>
             <span className={styles.comConsultoriaEstratgica}>
-              com Consultoria Estratégica
-              <br />
+              com Consultoria Estratégica<br />
             </span>
           </i>
           <div className={styles.oferecemosServiosPersonaliz}>
@@ -100,11 +82,7 @@ const Header = () => {
             <div key={index} className={styles[`icone${index + 1}`]}>
               <div className={styles.icone1Child} />
               <b className={styles.experienciaTcnica}>{item.label}</b>
-              <img
-                className={iconSvgClasses[index]}
-                src={item.icone}
-                alt=""
-              />
+              <img className={iconSvgClasses[index]} src={item.icone} alt="" />
             </div>
           ))}
         </div>
@@ -121,30 +99,31 @@ const Header = () => {
             </a>
           </div>
           <div className={styles.falarComConsultorParent}>
-            <a
-              onClick={handleScrollToSolucoes}
-              className={styles.falarComConsultor}
-            >
+            <button onClick={handleScrollToSolucoes} className={styles.falarComConsultor}>
               Nossos Serviços
-            </a>
+            </button>
           </div>
         </div>
       </div>
 
+      {/* ── IMAGENS — cada círculo com zoom escalonado ── */}
       <div className={styles.imagensBanners}>
-        {bannersArredondados.map((banner, index) => (
-          <div key={index} className={banner.className}>
-            <img src={banner.image} alt="" />
-          </div>
-        ))}
 
-        <div className={`${styles.designSemNome61} ${styles.carrosselWrapper}`}>
+        {/* Salame — delay 1 */}
+        <div className={`${styles.salameEQueijo} ${styles.zoomIn1}`}>
+          <img src={bannerSalame} alt="" />
+        </div>
+
+        {/* Vaca — delay 2 */}
+        <div className={`${styles.vacaCuriosaEEngracadaOlhanIcon} ${styles.zoomIn2}`}>
+          <img src={vacas} alt="" />
+        </div>
+
+        {/* Carrossel — delay 3 */}
+        <div className={`${styles.designSemNome61} ${styles.carrosselWrapper} ${styles.zoomIn3}`}>
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
             pagination={false}
             navigation={false}
             loop={true}
@@ -152,11 +131,7 @@ const Header = () => {
           >
             {carrosselImages.map((src, index) => (
               <SwiperSlide key={index}>
-                <img
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  className={styles.carrosselImg}
-                />
+                <img src={src} alt={`Slide ${index + 1}`} className={styles.carrosselImg} />
               </SwiperSlide>
             ))}
           </Swiper>

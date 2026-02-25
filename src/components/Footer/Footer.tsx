@@ -31,9 +31,9 @@ const Footer = () => {
               CONSUMIDOR EM UMA SÓ CADEIA.
             </p>
             <div className={styles.containerRedesSociais}>
-              <a href="/" className={styles.iconeInsta} aria-label="Instagram" />
-              <a href="/" className={styles.iconeLinkedin} aria-label="LinkedIn" />
-              <a href="/" className={styles.iconeWpp} aria-label="WhatsApp" />
+              <a href="https://www.instagram.com/hapse_consultoria?igsh=eWl5dDR3aW81Ymtr" className={styles.iconeInsta} target="_blank" aria-label="Instagram" />
+              <a href="https://www.linkedin.com/in/hapse-consultoria-agroalimentar-459697382?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" className={styles.iconeLinkedin} aria-label="LinkedIn" />
+              <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" className={styles.iconeWpp} aria-label="WhatsApp" />
             </div>
           </article>
 
