@@ -5,11 +5,15 @@ import sebraeLogo from "../../assets/svgs/parceiroSebrae.svg";
 import styles from "./styles.module.scss";
 
 const Footer = () => {
-  const parceiros = [{ logoParceiro: sebraeLogo, linkParceiro: "/" }];
 
   const whatsappNumber = "5554996797398";
   const whatsappMessage =
     "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+  const whatsappMessageSebrae = "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria, em parceira com o SEBRAE";
+
+  const parceiros = [{ logoParceiro: sebraeLogo, linkParceiro: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageSebrae)}` }];
+
+  
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -141,7 +145,7 @@ const Footer = () => {
             <h4 className={styles.titulosFooter}>Parceiros</h4>
             {parceiros.map((item, index) => (
               <div key={index}>
-                <a href={item.linkParceiro}>
+                <a target="_blank" href={item.linkParceiro}>
                   <img src={item.logoParceiro} alt="Logo Sebrae - Parceiro" />
                 </a>
               </div>

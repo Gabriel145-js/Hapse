@@ -7,6 +7,7 @@ const sebraeFlag = "/imgs/sebraeFlag.png";
 const NossosServicos = () => {
   const whatsappNumber = "5554996797398";
   const whatsappMessage = "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria";
+  const whatsappMessageSebrae = "Olá! Gostaria de saber mais sobre os serviços da HAPSE Consultoria, em parceira com o SEBRAE";
   const sectionRef = useRef<HTMLElement>(null);
 
   // ── cardInfo: slide da esquerda (desktop + mobile) ──
@@ -99,7 +100,8 @@ const NossosServicos = () => {
                   <h4>Parceiros SEBRAE</h4>
                   <span>Certificado Oficial</span>
                 </div>
-                <a className={styles.imgFlag} href="">
+                <a href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageSebrae)}`}
+                className={styles.imgFlag} target="_blank">
                   <img src={sebraeFlag} alt="" />
                 </a>
               </div>
@@ -108,7 +110,7 @@ const NossosServicos = () => {
                 agroalimentar com benefícios que reduzem custos e aumentam a
                 competitividade.
               </p>
-              <a className={styles.btnSaibaMaisSebrae} href="">
+              <a className={styles.btnSaibaMaisSebrae} href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessageSebrae)}`} target="_blank">
                 Saiba mais sobre os benefícios
               </a>
             </div>

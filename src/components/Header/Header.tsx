@@ -14,7 +14,7 @@ const vacas = "/imgs/banners/vacas.jpg";
 
 const carrosselImages = [
   "/imgs/banners/bannerDoisCarrossel.jpeg",
-  "/imgs/banners/bannerUmCarrossel.jpeg",
+  "/imgs/banners/bannerUmCarrossel.jpg",
 ];
 
 const Header = () => {
