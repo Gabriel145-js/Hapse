@@ -287,6 +287,8 @@
             gap: 25px;
         }
 
+
+
         .setaCards {
             flex-shrink: 0;
             background-repeat: no-repeat;
@@ -323,6 +325,10 @@
                 box-shadow:
                     10px -3px 23px #a5b884 inset,
                     -8px 20px 13px rgba(0, 0, 0, 0.25);
+            }
+
+            @media((min-width: 600px) and (max-width: 1024px)) {
+                width: 95%;
             }
 
             .numeroCardLinha {

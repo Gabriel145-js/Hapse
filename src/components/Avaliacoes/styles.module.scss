@@ -46,7 +46,7 @@
     .desktopOnly {
         display: flex;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             display: none !important;
         }
     }
@@ -54,7 +54,7 @@
     .mobileOnly {
         display: none;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             display: block;
         }
     }
