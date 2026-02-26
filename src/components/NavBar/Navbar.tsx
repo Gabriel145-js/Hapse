@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+
 import style from "./styles.module.scss";
 import logoMini from "../../assets/svgs/logos/logoMini.svg";
 import logoMob from "../../assets/svgs/logos/logoMobile.svg";
