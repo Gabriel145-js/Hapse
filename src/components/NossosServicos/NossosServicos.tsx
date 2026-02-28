@@ -70,7 +70,7 @@ const NossosServicos = () => {
 
           {/* ── slide da esquerda ── */}
           <div className={`${styles.cardInfo} ${styles.slideLeft}`} data-slide>
-            <h4>Oque fazemos por você?</h4>
+            <h4>O que fazemos por você?</h4>
             <p>
               A Hapse oferece consultoria personalizada para produtores rurais,
               agroindústrias e serviços de alimentação, com foco em:

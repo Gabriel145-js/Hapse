@@ -92,7 +92,7 @@ const QuemSomos = () => {
     },
     {
       iconePessoa: fotoMay,
-      nomePessoa: "Mayra Vissotto",
+      nomePessoa: "Mayra Vissotto Ribeiro",
       primeiroNome: "Mayra",
       descricaoPessoa:
         "Médica Veterinária, Mestre em Ciência Animal e pós-graduanda em Ciência e Tecnologia de Alimentos, com sólida experiência técnica e estratégica no agronegócio. Sócia-fundadora da HAPSE, une vivência...",
@@ -121,7 +121,7 @@ const QuemSomos = () => {
               A HAPSE Consultoria nasceu em Caxias do Sul (RS) com o propósito
               de transformar a cadeia agroalimentar por meio de soluções
               personalizadas, humanizadas e eficazes. Atuamos diretamente com
-              produtores de alimentos — da agroindústria às propriedades
+              produtores e manipuladores de alimentos — da agroindústria às propriedades
               rurais
             </p>
           </article>

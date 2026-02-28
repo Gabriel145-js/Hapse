@@ -69,8 +69,8 @@ const Header = () => {
             </span>
           </i>
           <div className={styles.oferecemosServiosPersonaliz}>
-            Oferecemos serviços personalizados para fortalecer as
-            Agroindústrias, as Propriedades Rurais e o setor Alimentício.
+            Oferecemos serviços personalizados para fortalecer
+            agroindústrias, propriedades rurais e setor alimentício.
             Capacitamos produtores e empresas, com soluções inovadoras,
             focadas em sustentabilidade, eficiência e valorização da produção
             e da identidade do produto.

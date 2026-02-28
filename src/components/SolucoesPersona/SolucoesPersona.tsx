@@ -129,7 +129,7 @@ const SolucoesPersona = () => {
 
           <div className={styles.cardLeft} data-depth>
             <ul>
-              <li>Escuta Humanizada</li>
+              <li>Escuta humanizada</li>
               <li>Processo ágil e eficiente</li>
               <li>Comunicação transparente</li>
               <li>Suporte contínuo e especializado</li>
